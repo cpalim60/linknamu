@@ -8,7 +8,7 @@ type Props = {
 
 export default function LinkList({ links, counts }: Props) {
   return (
-    <nav aria-label="링크 목록" className="flex flex-col gap-3">
+    <nav aria-label="링크 목록" className="flex flex-col gap-3.5">
       {links.map((link) => (
         <LinkCard key={link.id} link={link} initialCount={counts[link.id] ?? 0} />
       ))}

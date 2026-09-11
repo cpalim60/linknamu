@@ -10,14 +10,14 @@ export default async function Home() {
   const counts = await getClickCounts();
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col px-6 py-14 sm:py-20">
+    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col px-7 py-16 sm:px-8 sm:py-24">
       <ProfileHeader profile={profile} />
 
-      <div className="mt-10">
+      <div className="mt-12">
         <LinkList links={links} counts={counts} />
       </div>
 
-      <footer className="mt-auto pt-12 text-center text-xs text-zinc-400 dark:text-zinc-600">
+      <footer className="mt-auto pt-16 text-center text-xs text-[var(--muted)]/75">
         🌳 링크나무로 만들었습니다
       </footer>
     </main>

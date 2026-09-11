@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
-  --foreground: #171717;
+  --background: #fffaf4;
+  --foreground: #3d2f26;
+  --muted: #9a8071;
+
+  /* 크림 → 연한 살구 */
+  --page-gradient: linear-gradient(168deg, #fffaf4 0%, #fdf1e4 48%, #f9e0c9 100%);
+
+  /* 글래스 카드 */
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-bg-hover: rgba(255, 255, 255, 0.72);
+  --card-border: rgba(255, 255, 255, 0.8);
+  --card-shadow: 0 6px 20px -12px rgba(120, 76, 42, 0.35);
+  --card-shadow-hover: 0 10px 26px -12px rgba(120, 76, 42, 0.42);
+
+  /* 프로필 사진의 입체감 */
+  --avatar-ring: rgba(255, 255, 255, 0.9);
+  --avatar-shadow: 0 14px 30px -12px rgba(120, 76, 42, 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1b1512;
+    --foreground: #f2e9e1;
+    --muted: #a4938a;
+
+    --page-gradient: linear-gradient(168deg, #241c16 0%, #1c1613 50%, #2b1f17 100%);
+
+    --card-bg: rgba(255, 255, 255, 0.06);
+    --card-bg-hover: rgba(255, 255, 255, 0.11);
+    --card-border: rgba(255, 255, 255, 0.12);
+    --card-shadow: 0 6px 20px -12px rgba(0, 0, 0, 0.7);
+    --card-shadow-hover: 0 10px 26px -12px rgba(0, 0, 0, 0.75);
+
+    --avatar-ring: rgba(255, 255, 255, 0.16);
+    --avatar-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.7);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --font-sans:
+    "Pretendard Variable", Pretendard, system-ui, -apple-system,
+    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 
 body {
-  background: var(--background);
+  /* fixed: 스크롤해도 그라데이션이 따라 늘어나지 않고 화면에 고정됩니다. */
+  background: var(--page-gradient) fixed;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
