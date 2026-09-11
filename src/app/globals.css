@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffaf4;
-  --foreground: #3d2f26;
-  --muted: #9a8071;
+  --background: #f8fbfe;
+  --foreground: #27323c;
+  --muted: #758795;
 
-  /* 크림 → 연한 살구 */
-  --page-gradient: linear-gradient(168deg, #fffaf4 0%, #fdf1e4 48%, #f9e0c9 100%);
+  /* 흰기 도는 하늘색 → 연한 하늘색 */
+  --page-gradient: linear-gradient(168deg, #f8fbfe 0%, #eaf3fc 48%, #d4e8f7 100%);
 
   /* 글래스 카드 */
   --card-bg: rgba(255, 255, 255, 0.55);
   --card-bg-hover: rgba(255, 255, 255, 0.72);
   --card-border: rgba(255, 255, 255, 0.8);
-  --card-shadow: 0 6px 20px -12px rgba(120, 76, 42, 0.35);
-  --card-shadow-hover: 0 10px 26px -12px rgba(120, 76, 42, 0.42);
+  --card-shadow: 0 6px 20px -12px rgba(38, 78, 120, 0.35);
+  --card-shadow-hover: 0 10px 26px -12px rgba(38, 78, 120, 0.42);
 
   /* 프로필 사진의 입체감 */
   --avatar-ring: rgba(255, 255, 255, 0.9);
-  --avatar-shadow: 0 14px 30px -12px rgba(120, 76, 42, 0.45);
+  --avatar-shadow: 0 14px 30px -12px rgba(38, 78, 120, 0.45);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1b1512;
-    --foreground: #f2e9e1;
-    --muted: #a4938a;
+    --background: #121a21;
+    --foreground: #e7eef4;
+    --muted: #8b9dab;
 
-    --page-gradient: linear-gradient(168deg, #241c16 0%, #1c1613 50%, #2b1f17 100%);
+    --page-gradient: linear-gradient(168deg, #16202a 0%, #121a21 50%, #1a2836 100%);
 
     --card-bg: rgba(255, 255, 255, 0.06);
     --card-bg-hover: rgba(255, 255, 255, 0.11);
