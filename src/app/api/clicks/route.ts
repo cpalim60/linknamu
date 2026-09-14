@@ -1,6 +1,9 @@
 import { isKnownLinkId } from "@/data/profile";
 import { getClickCounts, incrementClick } from "@/lib/clicks";
 
+// 클릭 수는 항상 최신이어야 하므로 요청마다 실행합니다.
+export const dynamic = "force-dynamic";
+
 /** GET /api/clicks — 링크별 클릭 수 전체를 반환합니다. */
 export async function GET() {
   const counts = await getClickCounts();

@@ -5,7 +5,9 @@ import type { Link } from "@/lib/types";
 
 type Props = {
   link: Link;
-  initialCount: number;
+  count: number;
+  /** 클릭 수를 들고 있는 LinkList 에 방금 눌렸음을 알립니다. */
+  onClicked: (linkId: string) => void;
 };
 
 /** 새 탭으로 이동하면서, 같은 클릭에 클릭 수 기록 요청을 함께 보냅니다. */
@@ -35,8 +37,7 @@ function mailAddressOf(url: string): string | null {
   return address || null;
 }
 
-export default function LinkCard({ link, initialCount }: Props) {
-  const [count, setCount] = useState(initialCount);
+export default function LinkCard({ link, count, onClicked }: Props) {
   const [copied, setCopied] = useState(false);
   const copiedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -73,7 +74,7 @@ export default function LinkCard({ link, initialCount }: Props) {
       target={opensNewTab ? "_blank" : undefined}
       rel={opensNewTab ? "noopener noreferrer" : undefined}
       onClick={() => {
-        setCount((current) => current + 1); // 낙관적 업데이트
+        onClicked(link.id); // 낙관적 업데이트: 응답을 기다리지 않고 화면부터 올립니다
         recordClick(link.id);
         if (mailAddress) copyMailAddress(mailAddress);
       }}
